@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Css/EstiloPagina.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#">
+    <title>Cambiar Datos Paciente</title>
+</head>
+<body>
+    <script>console.log("Debe Existir Examenes en la lista")</script>
+    
+ <nav class="navegacion">
+    <ul>
+        <li class="nave">
+            <a href="">otra pagina</a>
+        </li>
+        <li class="nave">
+            <a href="">otra pagina</a>
+        </li>
+    </ul>
+ </nav>
+ <div class="contenedor">
+     <div class="left">
+         <h2>Buscar Paciente</h2>
+        <input name="rangoinf" type="tel" placeholder="DPI Paciente">
+         <button type="button" onclick="myFunction()">Buscar</button>
+         <button type="button" onclick="capturedata()" disabled='true' id="buttonConfirm" >Confirmar</button>
+     </div>
+     <div class="rigt" id="divocul" >
+         <label for="Identificacion">No Identificacion</label><input type="tel" name="Identificacion" placeholder="DPI">
+         <br><label for="nit">Nit</label><input type="tel" name="nit" placeholder="NIT">
+         <br><label for="nombres">Nombres</label><input type="tel" name="nombres" placeholder="Nombres y Apellidos">
+         <br><label for="edad">Edad</label><input type="tel" name="edad" placeholder="Edad">
+         <br><label for="sexo">Sexo</label><select name="categoria" id="" >
+             <option value="Masculino">Masculino</option>
+             <option value="Femenino">Femenino</option>
+         </select>
+         <br><label for="rangoinf">Rango Inferior</label><input name="rangoinf" type="tel" placeholder="Rango Inferiro">
+         <br><label for="rangosup">Rango Superior</label><input name="rangosup" type="tel" placeholder="Rango Superior">
+         <br><label for="rangosup">unidad</label><input name="unidad" type="text" placeholder="Unidad de medida">
+     </div>
+ </div>
+<script src="/Js/CambioExamen.js"></script>
+</body>
+</html>
