@@ -50,7 +50,7 @@ app.get('/EditRegistro' , (req , res)=>{
     res.status(201).sendFile(path.join(__dirname,'../views/EditarRegistro.html'));
 });
 //ver consulta
-app.get('/EditRegistro' , (req , res)=>{
+app.get('/Resultados' , (req , res)=>{
     console.log(path.join(__dirname,'../views/VerConsulta.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/VerConsulta.html'));
 });
