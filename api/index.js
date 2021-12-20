@@ -49,6 +49,11 @@ app.get('/EditRegistro' , (req , res)=>{
     console.log(path.join(__dirname,'../views/EditarRegistro.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/EditarRegistro.html'));
 });
+//ver consulta
+app.get('/EditRegistro' , (req , res)=>{
+    console.log(path.join(__dirname,'../views/VerConsulta.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/VerConsulta.html'));
+});
 
  app.listen(port , ()=> console.log('> Server is up and running on port : ' + port));
 });
