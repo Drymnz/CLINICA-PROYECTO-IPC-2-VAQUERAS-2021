@@ -32,6 +32,7 @@ app.get('/Registro' , (req , res)=>{
 app.get('/Cambio' , (req , res)=>{
     console.log(path.join(__dirname,'../views/CambiarExamen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/CambiarExamen.html'));
+});
 //Relacionar examen con el cliente
 app.get('/Asignar-Examen' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Asignar-Examen.html'));
@@ -56,4 +57,3 @@ app.get('/Resultados' , (req , res)=>{
 });
 
  app.listen(port , ()=> console.log('> Server is up and running on port : ' + port));
-});
