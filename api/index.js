@@ -28,7 +28,7 @@ app.get('/Registro' , (req , res)=>{
     console.log("Requisito EL administrador debe logearse");
     res.status(201).sendFile(path.join(__dirname,'../views/Registro.html'));
 });
-
+//CAmbiar datos del examen
 app.get('/Cambio' , (req , res)=>{
     console.log(path.join(__dirname,'../views/CambiarExamen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/CambiarExamen.html'));
@@ -37,11 +37,18 @@ app.get('/Asignar-Examen' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Asignar-Examen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/Asignar-Examen.html'));
 });
+
 //Para la realizacion de examenes
 app.get('/Crear-Examen' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Crear-Examen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/Crear-Examen.html'));
 
 });
+//editar Registro de Paciente
+app.get('/EditRegistro' , (req , res)=>{
+    console.log(path.join(__dirname,'../views/EditarRegistro.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/EditarRegistro.html'));
+});
 
-app.listen(port , () => console.log('> Server is up and running on port : '+ port));
+ app.listen(port , ()=> console.log('> Server is up and running on port : ' + port));
+});

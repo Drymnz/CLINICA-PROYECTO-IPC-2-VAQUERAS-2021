@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../Css/EstiloPagina.css" rel="stylesheet" />
     <link rel="shortcut icon" href="#">
-    <title>Document</title>
+    <title>Cambiar Datos Paciente</title>
 </head>
 <body>
     <script>console.log("Debe Existir Examenes en la lista")</script>
@@ -23,16 +23,19 @@
  </nav>
  <div class="contenedor">
      <div class="left">
-         <select name="" id="">
-             <option value="select">Lista de Examenes</option>
-         </select><br><br><br>
-         <button type="button" onclick="myFunction()">Modificar</button>
+         <h2>Buscar Paciente</h2>
+        <input name="rangoinf" type="tel" placeholder="DPI Paciente">
+         <button type="button" onclick="myFunction()">Buscar</button>
          <button type="button" onclick="capturedata()" disabled='true' id="buttonConfirm" >Confirmar</button>
      </div>
      <div class="rigt" id="divocul" >
-         <label for="precio">Precio</label><input type="tel" name="precio" placeholder="Precio">
-         <br><label for="categoria">Grupo</label><select name="categoria" id="" >
-             <option value="sin seleccion">Grupo</option>
+         <label for="Identificacion">No Identificacion</label><input type="tel" name="Identificacion" placeholder="DPI">
+         <br><label for="nit">Nit</label><input type="tel" name="nit" placeholder="NIT">
+         <br><label for="nombres">Nombres</label><input type="tel" name="nombres" placeholder="Nombres y Apellidos">
+         <br><label for="edad">Edad</label><input type="tel" name="edad" placeholder="Edad">
+         <br><label for="sexo">Sexo</label><select name="categoria" id="" >
+             <option value="Masculino">Masculino</option>
+             <option value="Femenino">Femenino</option>
          </select>
          <br><label for="rangoinf">Rango Inferior</label><input name="rangoinf" type="tel" placeholder="Rango Inferiro">
          <br><label for="rangosup">Rango Superior</label><input name="rangosup" type="tel" placeholder="Rango Superior">
