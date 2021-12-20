@@ -1,0 +1,7 @@
+#FrameInicial {
+    height: 550;
+}
+#myFrame iframe{
+    height: 100%;
+    width: 100%;
+}

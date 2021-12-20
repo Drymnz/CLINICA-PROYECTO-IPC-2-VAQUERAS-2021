@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica</title>
+
+        <link rel="stylesheet" href="Css/EstilosPractica.css">
+</head>
+<body>
+     <script>console.log("Requisito: Para registrar el administrador debe logearse");</script>
+    <img src="img/Fondo.png" id="Fondos">
+    <div class="container" id="ContenedorReg">
+        <div class="login-content"  id="encontrar">
+            <form>
+                <img src="img/Registro.png">
+                <h2 class="title">Registro</h2>
+                <div class="input-div one">
+                   <div class="i">
+                        <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Nombre</h5>
+                        <input type="text" class="input" id="nombre">
+                   </div>
+                </div>
+                <div class="input-div one">
+                   <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Apellido</h5>
+                        <input type="text" class="input" id="apellido">
+                   </div>
+                </div>
+                <div class="input-div pass">
+                   <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Contraseña</h5>
+                        <input type="password" class="input" id="password">
+                   </div>
+                </div>
+                <div class="input-div one">
+                   <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Correo</h5>
+                        <input type="text" class="input" id="correo">
+                   </div>
+                </div>
+
+                <a href="../">¿Ya tienes cuenta? Login</a>
+                <button type="submit" class="btn" onclick="Registro(event)">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="Js/App.js"></script>
+</body>
+</html>

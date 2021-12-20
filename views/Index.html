@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica</title>
+
+    <link rel="stylesheet" href="Css/EstilosPractica.css">
+</head>
+<script>console.log("Requisito EL administrador debe logearse");</script>
+<body>
+    <img src="img/Fondo.png" id="Fondos">
+    <div class="container" id="Contenedor">
+        <div class="login-content" id="encontrar">
+            <form>
+                <img src="img/Login.png">
+                <h2 class="title">Bienvenido</h2>
+                <div class="input-div one">
+                   <div class="i">
+                        <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Correo</h5>
+                        <input type="text" class="input" id="usuario" required="required">
+                   </div>
+                </div>
+                <div class="input-div pass">
+                   <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Contraseña</h5>
+                        <input type="password" class="input" id="contraseña">
+                   </div>
+                </div>
+                <br>
+                <a href="../Registro">¿No tienes cuenta? Registrate Aqui</a>
+                <button class="btn" onclick="Loggin(event)">Ingresar</button>
+                                <a href="../Clientes">Clientes</a>
+
+            </form>
+        </div>
+
+    </div>
+
+
+	<script src="Js/App.js"></script>
+</body>
+</html>
