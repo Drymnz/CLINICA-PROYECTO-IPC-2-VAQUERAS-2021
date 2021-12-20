@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Css/EstiloPagina.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#">
+    <title>Document</title>
+</head>
+<body>
+    <script>console.log("Debe Existir Examenes en la lista")</script>
+    
+ <nav class="navegacion">
+    <ul>
+        <li class="nave">
+            <a href="">Este es un link</a>
+        </li>
+        <li class="nave">
+            <a href="">este es otro link</a>
+        </li>
+    </ul>
+ </nav>
+ <div class="contenedor">
+     <div class="left">
+         <select name="" id="">
+             <option value="select">Lista de Examenes</option>
+         </select><br><br><br>
+         <button type="button" onclick="myFunction()">Modificar</button>
+         <button type="button">Confirmar</button>
+     </div>
+     <div class="rigt" id="divocul" >
+         <label for="precio">Precio</label><input type="text" name="precio" placeholder="Precio">
+         <br><label for="categoria">Grupo</label><select name="categoria" id="">
+             <option value="">Grupo</option>
+         </select>
+         <br><label for="rangoinf">Rango Inferior</label><input name="rangoinf" type="text">
+         <br><label for="rangosup">Rango Superior</label><input name="rangosup" type="text">
+     </div>
+ </div>
+<script src="/Js/CambioExamen.js"></script>
+</body>
+</html>

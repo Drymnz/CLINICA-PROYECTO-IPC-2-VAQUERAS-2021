@@ -26,4 +26,8 @@ app.get('/Registro' , (req , res)=>{
     console.log("Requisito EL administrador debe logearse");
     res.status(201).sendFile(path.join(__dirname,'../views/Registro.html'));
 });
+app.get('/Cambio' , (req , res)=>{
+    console.log(path.join(__dirname,'../views/CambiarExamen.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/CambiarExamen.html'));
+});
  app.listen(port , ()=> console.log('> Server is up and running on port : ' + port))

@@ -1,0 +1,43 @@
+.navegacion{
+    background:#33f6ff;
+    margin-top: 0%;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+.nave{
+    display: inline-block;
+    background: #05c9d3;
+    padding: 10px;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+body{
+    margin: 0%;
+}
+
+.left{
+    background: white;
+    width: 30%;
+    border-radius: 5px;
+    margin-left: 2%;
+    display: inline-block;
+    text-align: center;
+}
+.rigt{
+    display: inline-block;
+    width: 65%;
+    border-left:blue;
+    margin-left: 1%;
+    text-align: left;
+    visibility: hidden;
+}
+.contenedor{
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+}
