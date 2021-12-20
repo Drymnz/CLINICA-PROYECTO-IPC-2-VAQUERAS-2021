@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='main.js'></script>
+
     <link rel="stylesheet" href="Css/buscador.css">
     <link rel="stylesheet" href="Css/Table.css">
-</head>
-<body>
+
     <!-- aqui esta el buscador-->
     <div class="wrap ">
         <div class="search " >
-           <input type="text" class="searchTerm" placeholder="¿Como se llama?">
-           
+           <input type="text" id="DPI" class="searchTerm" placeholder="¿Cual DPI?">
         </div>
         <div class="search" >
-            <input type="number" class="searchTerm" placeholder="¿NIT?">
-            
+            <input type="number" id="NIT" class="searchTerm" placeholder="¿Cual NIT?">
          </div>
          <div class="search" >
-            <input type="number" class="searchTerm" placeholder="¿Edad?">
-            
+            <input type="number" id="Nombre" class="searchTerm" placeholder="¿Como se llama?">
          </div>
          <div class="search" >
-            <input type="number" class="searchTerm" placeholder="¿Telefono?">
-            
+            <input type="number" id="Edad" class="searchTerm" placeholder="¿Cual es la edad?">
          </div>
-        <button type="submit" class="searchButton">
+         <div class="search" >
+            <input type="number" id="Telefono" class="searchTerm" placeholder="¿Cual es el Telefono?">
+         </div>
+        <button type="submit" class="searchButton" onclick="buscarCliente()">
         <i class="fa fa-search">Buscar</i>
         </button>
         </div>
@@ -55,9 +46,8 @@
                     <td>HOMBRE</td>
                     <td>4678922</td>
                     <td>28-2-07-1997</td>
-                    <td><button class="searchButton">resigistrar</button></td>
+                    <td><button class="searchButton" onclick="asignar()">resigistrar</button></td>
                 </tr>
             </tbody>
         </table>
-</body>
-</html>
+<script src="Js/Examen.js"></script>

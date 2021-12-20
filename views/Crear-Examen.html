@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="Css/Crear-Examen.css">
-</head>
-<body>
+<link rel="stylesheet" href="Css/Crear-Examen.css">
     <section class="forms-section">
         <div class="forms">
           <div class="form-wrapper is-active">
             <button type="button" class="switcher switcher-login" >
               Datos del examen
             </button>
-            <div class="form form-login" id="examen">
-              <fieldset>
+            <div class="form form-login">
+              <fieldset  id="examen">
                 <legend>Nombre de tipo de examen</legend>
                 <div class="input-block">
                   <label for="Nombre">Nombre de tipo de examen</label>
-                  <input id="ingrese-Nombre-cliente" type="text" required>
+                  <input id="nombre-tipo" type="text" required>
                 </div>
                 <div class="input-block">
-                  <label for="login-Apellido">Nombre de examen</label>
-                  <input id="ingrese-Nombre-0" type="text" required>
+                  <label for="login-Apellido">Nombre de examen 1</label>
+                  <input id="ingrese-Nombre-1" type="text" required>
                 </div>
-                <button type="submit" class="btn-login" onclick="agregarExamen()">+</button>
               </fieldset>
+              <button type="submit" class="btn-login" onclick="agregarExamen()">+</button>
               <button type="submit" class="btn-login" onclick="ingresarCliente()">Iniciar</button>
             </div>
           </div>
         </div>
         </section>
-</body>
 <script src="Js/Examen.js"></script>
-</html>
