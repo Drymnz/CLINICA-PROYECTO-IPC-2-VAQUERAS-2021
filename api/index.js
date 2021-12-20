@@ -10,20 +10,32 @@ app.use('/js',express.static(__dirname+'api/public/js'));
 
 
 app.get('/' , (req , res)=>{
-    res.json({ mensaje: '¡Hola Mundo!' })   
+    res.json({ mensaje: 'ESTAS CONECTADO AL PUERTO 3000' })   
  });
- 
+ // Para el registro de pacientes 
  app.get('/Pacientes' , (req , res)=>{
     console.log(path.join(__dirname,'../views/IngresoClientes.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
 });
+// Para el inicio del servert
 app.get('/Clientes' , (req , res)=>{
     console.log(path.join(__dirname,'../views/share/Clientes.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/share/Clientes.html'));
 });
+//El registro de pacientes
 app.get('/Registro' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Registro.html'));
     console.log("Requisito EL administrador debe logearse");
     res.status(201).sendFile(path.join(__dirname,'../views/Registro.html'));
+});
+//Relacionar examen con el cliente
+app.get('/Asignar-Examen' , (req , res)=>{
+    console.log(path.join(__dirname,'../views/Asignar-Examen.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/Asignar-Examen.html'));
+});
+//Para la realizacion de examenes
+app.get('/Crear-Examen' , (req , res)=>{
+    console.log(path.join(__dirname,'../views/Crear-Examen.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/Crear-Examen.html'));
 });
  app.listen(port , ()=> console.log('> Server is up and running on port : ' + port))

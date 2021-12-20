@@ -15,5 +15,9 @@
     "url": "https://github.com/Drymnz/CLINICA-PROYECTO-IPC-2-VAQUERAS-2021/issues"
   },
   "homepage": "https://github.com/Drymnz/CLINICA-PROYECTO-IPC-2-VAQUERAS-2021#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
 }
