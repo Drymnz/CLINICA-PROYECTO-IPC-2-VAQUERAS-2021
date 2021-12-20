@@ -9,7 +9,7 @@
     <title>Cambiar Datos Paciente</title>
 </head>
 <body>
-    <script>console.log("Debe Existir Examenes en la lista")</script>
+    <script>console.log("Se debe de Ingresar el Numero de Dpi del Paciente")</script>
     
  <nav class="navegacion">
     <ul>
@@ -31,17 +31,17 @@
      <div class="rigt" id="divocul" >
          <label for="Identificacion">No Identificacion</label><input type="tel" name="Identificacion" placeholder="DPI">
          <br><label for="nit">Nit</label><input type="tel" name="nit" placeholder="NIT">
-         <br><label for="nombres">Nombres</label><input type="tel" name="nombres" placeholder="Nombres y Apellidos">
+         <br><label for="nombres">Nombres</label><input type="text" name="nombres" placeholder="Nombres y Apellidos">
          <br><label for="edad">Edad</label><input type="tel" name="edad" placeholder="Edad">
-         <br><label for="sexo">Sexo</label><select name="categoria" id="" >
+         <br><label for="sexo">Sexo</label><select name="sexo" id="" >
              <option value="Masculino">Masculino</option>
              <option value="Femenino">Femenino</option>
          </select>
-         <br><label for="rangoinf">Rango Inferior</label><input name="rangoinf" type="tel" placeholder="Rango Inferiro">
-         <br><label for="rangosup">Rango Superior</label><input name="rangosup" type="tel" placeholder="Rango Superior">
-         <br><label for="rangosup">unidad</label><input name="unidad" type="text" placeholder="Unidad de medida">
+         <br><label for="rangoinf">Direccion</label><input name="direccion" type="text" placeholder="Direccion">
+         <br><label for="rangosup">Telefono</label><input name="Telefono" type="tel" placeholder="Telefono">
+         <br><label for="rangosup">Fecha de Nacimiento</label><input name="Nacimiento" type="date" placeholder="Unidad de medida">
      </div>
  </div>
-<script src="/Js/CambioExamen.js"></script>
+<script src="/Js/DatosPaciente.js"></script>
 </body>
 </html>

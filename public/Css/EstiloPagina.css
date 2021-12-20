@@ -23,6 +23,7 @@ body{
 .left{
     background: white;
     width: 30%;
+    padding-bottom: 200px;
     border-radius: 5px;
     margin-left: 2%;
     display: inline-block;
@@ -72,7 +73,7 @@ input[type=button], input[type=submit], input[type=reset], button  {
     -ms-transform: scale(0.95);
     transform: scale(0.95);
   }
-  input[type=text], input[type=password],input[type=tel], select {
+  input[type=text], input[type=password],input[type=tel], select, input[type=date]{
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;

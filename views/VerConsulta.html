@@ -23,25 +23,26 @@
  </nav>
  <div class="contenedor">
      <div class="left">
-         <h2>Buscar Paciente</h2>
-        <input name="rangoinf" type="tel" placeholder="DPI Paciente">
+         <h2>Buscar Resultados</h2>
+        <input name="rangoinf" type="tel" placeholder="No. Orden">
          <button type="button" onclick="myFunction()">Buscar</button>
          <button type="button" onclick="capturedata()" disabled='true' id="buttonConfirm" >Confirmar</button>
      </div>
      <div class="rigt" id="divocul" >
-         <label for="Identificacion">No Identificacion</label><input type="tel" name="Identificacion" placeholder="DPI">
-         <br><label for="nit">Nit</label><input type="tel" name="nit" placeholder="NIT">
-         <br><label for="nombres">Nombres</label><input type="tel" name="nombres" placeholder="Nombres y Apellidos">
-         <br><label for="edad">Edad</label><input type="tel" name="edad" placeholder="Edad">
-         <br><label for="sexo">Sexo</label><select name="categoria" id="" >
-             <option value="Masculino">Masculino</option>
-             <option value="Femenino">Femenino</option>
-         </select>
-         <br><label for="rangoinf">Rango Inferior</label><input name="rangoinf" type="tel" placeholder="Rango Inferiro">
-         <br><label for="rangosup">Rango Superior</label><input name="rangosup" type="tel" placeholder="Rango Superior">
-         <br><label for="rangosup">unidad</label><input name="unidad" type="text" placeholder="Unidad de medida">
+         <h1>Aca se dibuja una hoja con los resultados</h1>
+         <h1>o se genera un link para descargar un pdf con los resultados</h1>
      </div>
  </div>
-<script src="/Js/CambioExamen.js"></script>
+<script>function myFunction(){
+        let divocul = document.querySelector("#divocul");
+        if(divocul.style.visibility === 'visible'){
+            divocul.style.visibility = 'hidden';
+            document.getElementById("buttonConfirm").disabled = true;
+        }else{
+            divocul.style.visibility = 'visible';
+            document.getElementById("buttonConfirm").disabled = false;
+        }
+    }
+</script>
 </body>
 </html>
