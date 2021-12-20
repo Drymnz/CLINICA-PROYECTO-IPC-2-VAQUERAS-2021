@@ -13,9 +13,8 @@
           <div class="form-wrapper is-active">
             <button type="button" class="switcher switcher-login" >
               Datos del examen
-              <span class="underline"></span>
             </button>
-            <div class="form form-login">
+            <div class="form form-login" id="examen">
               <fieldset>
                 <legend>Nombre de tipo de examen</legend>
                 <div class="input-block">
@@ -26,6 +25,7 @@
                   <label for="login-Apellido">Nombre de examen</label>
                   <input id="ingrese-Nombre-0" type="text" required>
                 </div>
+                <button type="submit" class="btn-login" onclick="agregarExamen()">+</button>
               </fieldset>
               <button type="submit" class="btn-login" onclick="ingresarCliente()">Iniciar</button>
             </div>
@@ -33,4 +33,5 @@
         </div>
         </section>
 </body>
+<script src="Js/Examen.js"></script>
 </html>

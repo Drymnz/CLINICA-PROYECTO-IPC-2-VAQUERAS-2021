@@ -10,8 +10,10 @@ app.use('/js',express.static(__dirname+'api/public/js'));
 
 
 app.get('/' , (req , res)=>{
-    res.json({ mensaje: 'ESTAS CONECTADO AL PUERTO 3000' })   
+    console.log(path.join(__dirname,'../views/share/Clientes.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/share/Clientes.html'));
  });
+ 
  // Para el registro de pacientes 
  app.get('/Pacientes' , (req , res)=>{
     console.log(path.join(__dirname,'../views/IngresoClientes.html'));
@@ -38,4 +40,12 @@ app.get('/Crear-Examen' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Crear-Examen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/Crear-Examen.html'));
 });
- app.listen(port , ()=> console.log('> Server is up and running on port : ' + port))
+// manejo de errores
+app.use((error , req , res , next)=>{
+    res.status(400).json({
+        status : 'error',
+        message  : error.mensaje,
+    });
+});
+
+ app.listen(port , ()=> console.log('> Server is up and running on port : ' + port));
