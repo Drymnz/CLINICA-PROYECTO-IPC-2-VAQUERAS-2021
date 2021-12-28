@@ -1,9 +1,9 @@
 /**** mysql */
 //variables de entorno, esas vienen de docker
-const mysqlhost ='192.168.1.9';
-const mysqluser =  "prueba";
-const mysqlpass = "RNnxW9hp(&U~x2s";
-const mysqldatabase = "laboratorio_clinico";
+const mysqlhost ='localhost';
+const mysqluser =  "clinicaMedicadmin";
+const mysqlpass = "Password123$";
+const mysqldatabase = "clinicaMedica";
 //paquete
 var mysql = require('mysql2');
 //conexión
