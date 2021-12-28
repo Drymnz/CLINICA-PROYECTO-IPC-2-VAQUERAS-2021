@@ -1,5 +1,5 @@
 const conexionBD = require('./module/coneccion.js');
-const bcryptjs = require('bcryptjs');
+const incrypato = require('./module/incriptacion');
 const express = require("express");
 const app = express();
 const path = require('path');
@@ -26,30 +26,8 @@ app.get('/' , (req , res)=>{
  
  // Para el registro de pacientes 
 app.get('/Pacientes' , (req , res)=>{
-    req.session.usuario = '';
-    req.session.rol = '0';
-    switch (req.session.rol) {
-        case 0:
-            console.log(path.join(__dirname,'../views/IngresoClientes.html'));
-            res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
-            break;
-        case 1:
-            console.log(path.join(__dirname,'../views/Admin/Inventario.html'));
-            res.status(201).sendFile(path.join(__dirname,'../views/Admin/Inventario.html'));
-            break;
-        case 2:
-            console.log(path.join(__dirname,'../views/share/Clientes.html'));
-            res.status(201).sendFile(path.join(__dirname,'../views/share/Clientes.html'));
-            break;
-        case 3:
-            
-            console.log(path.join(__dirname,'../views/IngresoClientes.html'));
-            res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
-
-            break;
-        default:
-            break;
-    }
+        console.log(path.join(__dirname,'../views/IngresoClientes.html'));
+        res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
 });
 // Para el inicio del servert
 app.get('/Clientes' , (req , res)=>{
@@ -142,24 +120,28 @@ app.post('/registrarEmpleado', async(req,res)=>{
     let dpi = req.body.dpi;
     let laboratorio = req.body.laboratorio;
     let nombre = req.body.nombre;
-    const contraseña = req.body.key;
+    let contraseña = req.body.key;
     let rango = req.body.rango;
     let no_cuenta = req.body.no_cuenta;
     let telefono = req.body.telefono;
     // incriptaicon de contraseña
-    let passwordHaash = await bcryptjs.hash(contraseña,8,(error,contraseña)=>{
+    /*let passwordHaash = await bcryptjs.hash(contraseña,8,(error,contraseña)=>{
         if (error) {
             console.log('fallo la incriptaicon');
         } else {
             console.log('funciono todo');
         }
-    });
+    });*/
+    let passwordHaash = incrypato.encryp(contraseña);
+    console.log((passwordHaash));
+    //console.log(contraseña);
     conexionBD.con.query('INSERT INTO empleado set ?',{
         no_empleado : 0,
         dpi : dpi,
         laboratorio : 1,
         nombre : nombre,
-        contraseña : passwordHaash,
+        //no pude incripatar la contraseña
+        contraseña : contraseña,
         rango : rango,
         no_cuenta : no_cuenta,
         telefono : telefono
