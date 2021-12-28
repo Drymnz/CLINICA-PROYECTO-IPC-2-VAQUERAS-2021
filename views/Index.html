@@ -12,31 +12,31 @@
     <img src="img/Fondo.png" id="Fondos">
     <div class="container" id="Contenedor">
         <div class="login-content" id="encontrar">
-            <form>
+            <form action="verify" method="post">
                 <img src="img/Login.png">
                 <h2 class="title">Bienvenido</h2>
+                <h3>Ingrese DPI</h3>
                 <div class="input-div one">
                    <div class="i">
                         <i class="fas fa-user"></i>
                    </div>
                    <div class="div">
                         <h5>Correo</h5>
-                        <input type="text" class="input" id="usuario" required="required">
+                        <input type="text" name="usuario" class="input" id="usuario" required="required">
                    </div>
                 </div>
+                <h3>Contraseña</h3>
                 <div class="input-div pass">
                    <div class="i"> 
                         <i class="fas fa-lock"></i>
                    </div>
                    <div class="div">
-                        <h5>Contraseña</h5>
-                        <input type="password" class="input" id="contraseña">
+                    <h5>Contraseña</h5>
+                        <input type="password" name="password" class="input" id="contraseña">
                    </div>
                 </div>
                 <br>
-                <a href="../Registro">¿No tienes cuenta? Registrate Aqui</a>
                 <button class="btn" onclick="Loggin(event)">Ingresar</button>
-                                <a href="../Clientes">Clientes</a>
 
             </form>
         </div>

@@ -89,7 +89,7 @@ form{
     color: white;
     font-size: 18px;
     transition: .3s;
-    color: black;
+    color: white;
 }
 
 .input-div:before, .input-div:after{
