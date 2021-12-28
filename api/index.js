@@ -4,18 +4,20 @@ const express = require("express");
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 // direcciones
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}));
 app.use('/Css',express.static(__dirname+'api/public/Css'));
 app.use('/js',express.static(__dirname+'api/public/js'));
 app.use (express.json());
-
 app.use(session({
     secret : '123456798',
     resave : true,
     saveUninitialized : true
 }));
+
 //raiz
 app.get('/' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Index.html'));
@@ -145,8 +147,6 @@ app.post('/registrarEmpleado', async(req,res)=>{
     let no_cuenta = req.body.no_cuenta;
     let telefono = req.body.telefono;
     // incriptaicon de contraseña
-    console.log(req.body.no_cuenta);
-
     let passwordHaash = await bcryptjs.hash(contraseña,8,(error,contraseña)=>{
         if (error) {
             console.log('fallo la incriptaicon');
@@ -154,12 +154,12 @@ app.post('/registrarEmpleado', async(req,res)=>{
             console.log('funciono todo');
         }
     });
-    /*conexionBD.con.query('INSERT INTO empleado set ?',{
+    conexionBD.con.query('INSERT INTO empleado set ?',{
         no_empleado : 0,
         dpi : dpi,
         laboratorio : 1,
         nombre : nombre,
-        contraseña : contraseña,
+        contraseña : passwordHaash,
         rango : rango,
         no_cuenta : no_cuenta,
         telefono : telefono
@@ -171,7 +171,7 @@ app.post('/registrarEmpleado', async(req,res)=>{
             console.log(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
             res.status(201).sendFile(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
         }
-    });*/
+    });
     //INSERT INTO empleado VALUES (0, 6408609680902, 1, 'Ana Maria Roman Guzman', 'temporal', 2, '12312-123-322323', '+50252634759');
 });
 app.get('/registrarExamen' , (req , res)=>{

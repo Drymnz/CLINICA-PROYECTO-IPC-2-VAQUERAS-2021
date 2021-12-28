@@ -12,7 +12,7 @@
         <div class="d-flex">
         <div class="card col-sm-5"> 
             <div class="card-body"> 
-                <form action="#"> 
+                <form action="/registrarEmpleado" method="post"> 
                      <center> <b>  <label>Ingresar Empleado</label></b></center>
                      <div class="form-group">
                          <label>CUI</label>
@@ -38,8 +38,12 @@
                         <label>Contraseña</label>
                         <input type="text" name="key" class="form-control" id="key">
                     </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" name="telefono" class="form-control" id="telefono">
+                    </div>
                      <br>                    
-                     <button class="btn btn-info"  onclick="Registro()" > Agregar </button>
+                     <button class="btn btn-info"  > Agregar </button>
                  </form>    
             </div>    
         </div>
