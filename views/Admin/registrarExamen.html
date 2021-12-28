@@ -12,24 +12,32 @@
         <div class="d-flex">
         <div class="card col-sm-5"> 
             <div class="card-body"> 
-                <form> 
+                <form action="/registrarExamen" method="post"> 
                      <center> <b>  <label>Ingresar Tipo Examen</label></b></center>
                      <div class="form-group">
-                         <label>ID</label>
-                         <input type="text" name="txtmuni" class="form-control" id="cui" >
+                         <label>Nombre Examen</label>
+                         <input type="text" name="nombre_examen" class="form-control" id="cui" >
                      </div>
                      <div class="form-group">
                          <label>Tipo Examen</label>
-                         <input type="text" name="txtnom"  class="form-control" id="nomCliente">
+                         <input type="text" name="tipo"  class="form-control" id="nomCliente">
                      </div>
                      <div class="form-group">
                          <label>Costo</label>
-                         <input type="text" name="txtdire" class="form-control" id="apeCliente">
+                         <input type="number" name="precio" class="form-control" id="apeCliente">
                      </div>
                      <div class="form-group">
-                         <label>Descripcion</label>
-                         <input type="text" name="txtdepa" class="form-control" id="departamento">
+                         <label>Unidad</label>
+                         <input type="text" name="unidad" class="form-control" id="departamento">
                      </div>
+                     <div class="form-group">
+                        <label>Rango Superior</label>
+                        <input type="text" name="rango_superior" class="form-control" id="departamento">
+                    </div>
+                    <div class="form-group">
+                        <label>Rango Inferior</label>
+                        <input type="text" name="rango_inferior" class="form-control" id="departamento">
+                    </div>
 
                      <br>                    
                      <button class="btn btn-info" onclick="newCliente(event)"> Agregar </button>

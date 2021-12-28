@@ -242,3 +242,26 @@ app.post('/verify',function(req,res){
         res.end();
     }
 });
+
+app.post('/registrarExamen', async(req,res)=>{
+    const {nombre_examen, tipo, precio, unidad, rango_superior, rango_inferior} = req.body;
+    const newLink= {
+        nombre_examen, 
+        tipo, 
+        precio, 
+        unidad, 
+        rango_superior, 
+        rango_inferior
+    };
+    conexionBD.con.query('INSERT INTO detalle_examen set ?', [newLink]);
+    },async (error,resultado)=>{
+        if (error) {
+            console.log('fallo la creacion de empleado' + error);
+        } else {
+            console.log('fue creado '+ nombre);
+            console.log(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
+        }
+    
+});
+//INSERT INTO empleado VALUES (0, 6408609680902, 1, 'Ana Maria Roman Guzman', 'temporal', 2, '12312-123-322323', '+50252634759');
