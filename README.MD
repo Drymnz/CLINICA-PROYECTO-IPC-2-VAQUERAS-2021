@@ -38,7 +38,9 @@ docker build .
 Para ejecutar el contenedor puede:
 
 ```bash
-docker run -p 5000:5000  -e MYSQLHOST='192.168.1.27'  -e MYSQLUSER='clinicaMedicadmin' -e MYSQLPASS='Password123$' -v "$(pwd)/api/:/app/api/" -v "$(pwd)/views/:/app/views/" -v "$(pwd)/public/:/app/public/" -it 1ca13f798f5f
+sudo docker run -p 5000:5000  -e MYSQLHOST='192.168.1.27'  -e MYSQLUSER='clinicaMedicadmin' -e MYSQLPASS='Password123$' -v "$(pwd)/api/:/app/api/" -v "$(pwd)/views/:/app/views/" -v "$(pwd)/public/:/app/public/" -it 85d134140806
+
+
 ```
 
 Debe remplazar los siguientes datos:
@@ -47,4 +49,3 @@ Debe remplazar los siguientes datos:
 * **USUARIO**: usuario de la base de datos.
 * **PASSWORD**: password de la base de datos
 * **HASHIMAGEN**: hash de la imagen desarrollada en el paso anterior
-

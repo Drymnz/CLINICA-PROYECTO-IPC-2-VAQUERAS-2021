@@ -5,7 +5,6 @@
   "scripts": {
     "start": "nodemon ./api/index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Drymnz/CLINICA-PROYECTO-IPC-2-VAQUERAS-2021.git"
@@ -19,6 +18,7 @@
   "description": "",
   "devDependencies": {
     "express": "^4.17.2",
+    "mysql": "github:mysqljs/mysql",
     "nodemon": "^2.0.15"
   }
 }
