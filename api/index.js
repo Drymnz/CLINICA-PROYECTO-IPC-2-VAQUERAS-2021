@@ -208,3 +208,37 @@ app.use((error , req , res , next)=>{
     });
 });
 app.listen(port , ()=> console.log('> Server is up and running on port : ' + port));
+
+module.exports = conexionBD.con;
+
+app.post('/verify',function(req,res){
+    const user=req.body.usuario;
+    const pass=req.body.password;
+    if(user && pass){
+        const consulta='SELECT *FROM empleado WHERE contraseña=? AND nombre= ?';
+        conexionBD.con.query(consulta,[pass,user],function(error,results,fields){
+            if(error){
+                console.log(error);
+            }else{
+                if(results.length>0){
+                    console.log(results[0].rango);
+                    if(results[0].Rango==1){
+                        res.redirect('/Admin');
+                    }else if(results[0].rango==2){
+                        res.redirect('/laboratorista');
+                    }else if(results[0].rango==3){
+                        res.redirect('/Clientes');
+                    }else{
+                        res.redirect("/")
+                    }
+                }else {
+                    res.redirect('/');
+                }
+            }
+            res.end();
+        });
+    }else {
+        alert("Porfavor Ingrese un usuario y contraseña");
+        res.end();
+    }
+});
