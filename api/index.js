@@ -70,7 +70,7 @@ app.get('/Resultados' , (req , res)=>{
 //-----share/Clientes
 //-----share/admin
 //-----share/laboratorista
- //----------------------------Secretaria----------------------------------------------
+//----------------------------Secretaria----------------------------------------------
 
  app.get('/Pacientes' , (req , res)=>{
     console.log(path.join(__dirname,'../views/IngresoClientes.html'));
@@ -100,7 +100,6 @@ app.get('/Factura' , (req , res)=>{
     console.log(path.join(__dirname,'../views/secretaria/Factura.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/secretaria/Factura.html'));
 });
- app.listen(port , ()=> console.log('> Server is up and running on port : ' + port))
 
  //---------------------------------------------------------- Admin
 
