@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js"
+    "start": "nodemon ./api/index.js",
+    "dev": "nodemon ./api/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   "homepage": "https://github.com/Drymnz/CLINICA-PROYECTO-IPC-2-VAQUERAS-2021#readme",
   "description": "",
   "devDependencies": {
-    "express": "^4.17.2",
-    "mysql": "github:mysqljs/mysql",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
   }
 }
