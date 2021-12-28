@@ -1,6 +1,6 @@
 /**** mysql */
 //variables de entorno, esas vienen de docker
-const mysqlhost ='localhost';
+const mysqlhost ='192.168.1.9';
 const mysqluser =  "clinicaMedicadmin";
 const mysqlpass = "Password123$";
 const mysqldatabase = "clinicaMedica";
