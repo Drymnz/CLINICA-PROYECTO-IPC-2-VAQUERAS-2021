@@ -18,6 +18,9 @@
   "homepage": "https://github.com/Drymnz/CLINICA-PROYECTO-IPC-2-VAQUERAS-2021#readme",
   "description": "",
   "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.6",
+    "express-session": "^1.17.2",
     "nodemon": "^2.0.15"
   },
   "dependencies": {

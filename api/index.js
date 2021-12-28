@@ -1,30 +1,53 @@
 const conexionBD = require('./module/coneccion.js');
+const bcryptjs = require('bcryptjs');
 const express = require("express");
 const app = express();
 const path = require('path');
+const session = require('express-session');
 const port = process.env.PORT || 5000;
 // direcciones
 app.use(express.static('public'));
 app.use('/Css',express.static(__dirname+'api/public/Css'));
 app.use('/js',express.static(__dirname+'api/public/js'));
+app.use (express.json());
 
+app.use(session({
+    secret : '123456798',
+    resave : true,
+    saveUninitialized : true
+}));
 //raiz
 app.get('/' , (req , res)=>{
-    conexionBD.con.query('select * from cliente', (err , rows) =>{
-        if (err) {
-            console.log('F');
-        }
-        else{
-        console.log(rows);}
-    } );
-    console.log(path.join(__dirname,'../views/share/Clientes.html'));
-    res.status(201).sendFile(path.join(__dirname,'../views/share/Clientes.html'));
- });
+    console.log(path.join(__dirname,'../views/Index.html'));
+    res.status(201).sendFile(path.join(__dirname,'../views/Index.html'));
+});
  
  // Para el registro de pacientes 
- app.get('/Pacientes' , (req , res)=>{
-    console.log(path.join(__dirname,'../views/IngresoClientes.html'));
-    res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
+app.get('/Pacientes' , (req , res)=>{
+    req.session.usuario = '';
+    req.session.rol = '0';
+    switch (req.session.rol) {
+        case 0:
+            console.log(path.join(__dirname,'../views/IngresoClientes.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
+            break;
+        case 1:
+            console.log(path.join(__dirname,'../views/Admin/Inventario.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/Admin/Inventario.html'));
+            break;
+        case 2:
+            console.log(path.join(__dirname,'../views/share/Clientes.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/share/Clientes.html'));
+            break;
+        case 3:
+            
+            console.log(path.join(__dirname,'../views/IngresoClientes.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/IngresoClientes.html'));
+
+            break;
+        default:
+            break;
+    }
 });
 // Para el inicio del servert
 app.get('/Clientes' , (req , res)=>{
@@ -44,7 +67,7 @@ app.get('/Cambio' , (req , res)=>{
 });
 //Relacionar examen con el cliente
 app.get('/Asignar-Examen' , (req , res)=>{
-    console.log(path.join(__dirname,'../views/Asignar-Examen.html'));
+    console.log(path.join(__dirname,'../views/Asignakey-Examen.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/Asignar-Examen.html'));
 });
 
@@ -110,6 +133,46 @@ app.get('/Factura' , (req , res)=>{
 app.get('/registrarEmpleado' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
     res.status(201).sendFile(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
+});
+
+app.post('/registrarEmpleado', async(req,res)=>{
+    let no_empleado = req.body.no_empleado;
+    let dpi = req.body.dpi;
+    let laboratorio = req.body.laboratorio;
+    let nombre = req.body.nombre;
+    const contraseña = req.body.key;
+    let rango = req.body.rango;
+    let no_cuenta = req.body.no_cuenta;
+    let telefono = req.body.telefono;
+    // incriptaicon de contraseña
+    console.log(req.body.no_cuenta);
+
+    let passwordHaash = await bcryptjs.hash(contraseña,8,(error,contraseña)=>{
+        if (error) {
+            console.log('fallo la incriptaicon');
+        } else {
+            console.log('funciono todo');
+        }
+    });
+    /*conexionBD.con.query('INSERT INTO empleado set ?',{
+        no_empleado : 0,
+        dpi : dpi,
+        laboratorio : 1,
+        nombre : nombre,
+        contraseña : contraseña,
+        rango : rango,
+        no_cuenta : no_cuenta,
+        telefono : telefono
+    },async (error,resultado)=>{
+        if (error) {
+            console.log('fallo la creacion de empleado' + error);
+        } else {
+            console.log('fue creado '+ nombre);
+            console.log(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
+            res.status(201).sendFile(path.join(__dirname,'../views/Admin/registrarEmpleado.html'));
+        }
+    });*/
+    //INSERT INTO empleado VALUES (0, 6408609680902, 1, 'Ana Maria Roman Guzman', 'temporal', 2, '12312-123-322323', '+50252634759');
 });
 app.get('/registrarExamen' , (req , res)=>{
     console.log(path.join(__dirname,'../views/Admin/registrarExamen.html'));

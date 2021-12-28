@@ -1,21 +1,23 @@
 /**** mysql */
 //variables de entorno, esas vienen de docker
-const mysqlhost ='192.168.1.27';
+const mysqlhost ='localhost';
 const mysqluser =  "clinicaMedicadmin";
 const mysqlpass = "Password123$";
+const mysqldatabase = "clinicaMedica";
 //paquete
 var mysql = require('mysql');
 //conexión
  var con = mysql.createConnection({
-    host: 'localhost',
+    host: mysqlhost,
     user: mysqluser,
     password: mysqlpass,
-    database : 'clinicaMedica'
+    port : 3306,
+    database : mysqldatabase
 });
 //prueba
 con.connect(function (err) {
     if (err) {
-    console.log('no');
+    console.log(' error en >>>>  ' + err);
     }
     else{
     console.log("Connected! :P hola a todos");

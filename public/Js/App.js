@@ -64,13 +64,14 @@ function Loggin(evt) {
 
 //Codigo de la parte de Registro----------------------------------------------------------------
 
-function Registro(evt){
-    evt.preventDefault();
-
-    let correo = document.getElementById("correo").value
-    let password = document.getElementById("password").value
-    let apellido = document.getElementById("apellido").value
-    let nombre = document.getElementById("nombre").value
+function Registro(){
+console.log('holaasdfssdafsd');
+    let correo = document.getElementById("dpi").value
+    let password = document.getElementById("nombre").value
+    let apellido = document.getElementById("no_cuenta").value
+    let nombre = document.getElementById("rango").value
+    let nombre = document.getElementById("key").value
+    console.log(correo);
     var newUser = {
         usuario: correo,
         contraseña: password
