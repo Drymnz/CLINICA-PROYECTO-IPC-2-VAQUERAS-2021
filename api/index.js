@@ -215,7 +215,7 @@ app.post('/verify',function(req,res){
     const user=req.body.usuario;
     const pass=req.body.password;
     if(user && pass){
-        const consulta='SELECT *FROM empleado WHERE contraseña=? AND nombre= ?';
+        const consulta='SELECT *FROM empleado WHERE contraseña=? AND DPI= ?';
         conexionBD.con.query(consulta,[pass,user],function(error,results,fields){
             if(error){
                 console.log(error);
